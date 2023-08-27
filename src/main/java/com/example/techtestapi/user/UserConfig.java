@@ -11,32 +11,4 @@ import java.util.List;
 @Configuration
 public class UserConfig {
 
-    @Bean
-    CommandLineRunner commandLineRunner(UserRepository repository) {
-        return  args -> {
-            User igor = new User(
-                    100,
-                    "Igor",
-                    "PF",
-                    "CPF",
-                    "RG",
-                    LocalDate.of(2002, Month.MARCH, 10),
-                    "11946679461",
-                    true
-            );
-
-            User mariam = new User(
-                    101,
-                    "Mariam",
-                    "PF",
-                    "CPF",
-                    "RG",
-                    LocalDate.of(2002, Month.MARCH, 10),
-                    "11946679461",
-                    true
-            );
-
-            repository.saveAll(List.of(igor, mariam));
-        };
-    }
 }
