@@ -11,7 +11,6 @@ import java.time.LocalDate;
 import java.util.List;
 
 @SpringBootApplication
-@CrossOrigin(origins = "*")
 public class TechtestApiApplication {
 
 	public static void main(String[] args) {
