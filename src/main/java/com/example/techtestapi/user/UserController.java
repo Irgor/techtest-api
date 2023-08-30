@@ -1,12 +1,10 @@
 package com.example.techtestapi.user;
 
-import ch.qos.logback.core.net.SyslogOutputStream;
-import jakarta.websocket.server.PathParam;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import java.time.LocalDate;
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @CrossOrigin(origins = "*")
@@ -21,8 +19,14 @@ public class UserController {
     }
 
     @GetMapping
-    public List<User> getUsers() {
-        return userService.getUsers();
+    @ResponseBody
+    public List<User> getUsers(@RequestParam Optional<String> name, @RequestParam Optional<Boolean> active) {
+        return userService.getUsers(name, active);
+    }
+
+    @GetMapping("/{id}")
+    public Optional<User> getUserById(@PathVariable int id) {
+        return userService.getUserById(id);
     }
 
     @PostMapping

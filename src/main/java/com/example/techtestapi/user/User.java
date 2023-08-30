@@ -1,14 +1,16 @@
 package com.example.techtestapi.user;
 
+import com.example.techtestapi.phone.Phone;
 import jakarta.persistence.*;
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
+
 @Entity
 @Table
 public class User {
     @Id
-    @GeneratedValue(
-            strategy = GenerationType.SEQUENCE
-    )
+    @GeneratedValue
     private int id;
     private String name;
     private String type;
